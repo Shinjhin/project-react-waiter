@@ -3,12 +3,12 @@
 // actions
 const createActionName = actionName => `app/tables/${actionName}`;
 const UPLOAD_TABLES = createActionName('UPLOAD_TABLES');
-const UPDATE_INFO = createActionName('UPDATE_STATUS');
+const UPDATE_INFO = createActionName('UPDATE_INFO');
 
 // action creators
 export const uploadTables = payload => ({ type: UPLOAD_TABLES, payload });
 export const updateInfo = payload => ({ type: UPDATE_INFO, payload });
-const url = "http://localhost:3131/api/tables";
+const url = "/api/tables";
 export const fetchTables = () => {
   return (dispatch) => {
     fetch(url)
@@ -16,6 +16,20 @@ export const fetchTables = () => {
       .then(tables => dispatch(uploadTables(tables)))
     }
   };
+  export const updateTables = (noweDane) => {
+    return(dispatch) => {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(noweDane),
+      };
+  
+      fetch(url + '/' + noweDane.id, options)
+        .then(() => dispatch(updateInfo(noweDane)))
+    }
+  }
 
 const tablesReducer = (statePart = [], action) => {
   switch (action.type) {
