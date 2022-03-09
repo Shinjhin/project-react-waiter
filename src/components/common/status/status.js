@@ -7,7 +7,7 @@ const Status = props => {
   console.log('x', x);
 
   return(
-    <select className={styles.select} onChange={props.onChange} value={props.value || props.defaultValue }>>
+    <select className={styles.select} onChange={props.onChange} value={props.value }>
         {x.map(it => <option>{it.op}</option>)}      
     </select>
   )

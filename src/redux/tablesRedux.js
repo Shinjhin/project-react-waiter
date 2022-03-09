@@ -24,6 +24,8 @@ const tablesReducer = (statePart = [], action) => {
     case UPDATE_INFO:
       statePart.filter(it => it.id === action.payload.id)[0].status = action.payload.status;
       statePart.filter(it => it.id === action.payload.id)[0].bill = action.payload.bill;
+      statePart.filter(it => it.id === action.payload.id)[0].peopleAmount = action.payload.clients;
+      statePart.filter(it => it.id === action.payload.id)[0].maxPeopleAmount = action.payload.maxClients;
       return statePart;
     default:
       return statePart;
