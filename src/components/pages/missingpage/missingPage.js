@@ -1,7 +1,9 @@
+import styles from './missingPage.module.scss'
+
 const MissingPage = () => {
     return(
         <div>
-            <p>Not Found</p>
+            <p className={styles.par}>Not Found</p>
         </div>
     )
 }
