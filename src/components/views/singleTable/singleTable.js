@@ -12,7 +12,7 @@ import MaxClients from "../../common/maxClients/maxClients";
 
 const SingleTable = () => {
 
-    const tables = useSelector (state => state.tables)
+    const tables = useSelector(state => state.tables)
     const { id } = useParams();
     const wynik = tables.filter(table => table.id === id).length > 0;
     const navigate = useNavigate();
@@ -23,7 +23,6 @@ const SingleTable = () => {
         }
     }, [wynik, tables])
 
-
     const dispatch = useDispatch();
     const [status, setStatus] = useState('');
     const [bill, setBill] = useState('');
@@ -31,8 +30,7 @@ const SingleTable = () => {
     const [maxClients, setMaxClients] = useState('');
 
     const handleSubmit = (table) => {
-        
-        const noweDane = { 
+        const noweDane = {
             id,
             bill: bill || table.bill,
             status: status || table.status,
@@ -42,7 +40,7 @@ const SingleTable = () => {
         dispatch(updateTables(noweDane))
         console.log('button');
     }
-    
+
     return (
         <> {tables.length > 0 &&
             <div>
@@ -80,4 +78,4 @@ const SingleTable = () => {
     )
 }
 
-export default SingleTable; 
+export default SingleTable;

@@ -10,7 +10,7 @@ import { fetchOptions } from "./redux/optionsRedux";
 import { fetchTables } from "./redux/tablesRedux";
 
 function App() {
-
+  
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchTables()), [dispatch]);
   useEffect(() => dispatch(fetchOptions()), [dispatch])

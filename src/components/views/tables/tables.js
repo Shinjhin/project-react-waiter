@@ -2,8 +2,8 @@ import Table from "../../pages/table/table";
 
 const Tables = () => {
     return(
-        <Table />
+            <Table />
     )
 }
 
-export default Tables; 
+export default Tables;

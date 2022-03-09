@@ -10,4 +10,4 @@ const BillNumber = props => {
     ) 
 }
 
-export default BillNumber; 
+export default BillNumber;

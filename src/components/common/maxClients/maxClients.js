@@ -7,4 +7,4 @@ const MaxClients = props => {
     )
 }
 
-export default MaxClients; 
+export default MaxClients;

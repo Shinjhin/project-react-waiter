@@ -7,4 +7,4 @@ const Clients = props => {
     )
 }
 
-export default Clients; 
+export default Clients;

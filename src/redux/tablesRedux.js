@@ -14,22 +14,23 @@ export const fetchTables = () => {
     fetch(url)
       .then(res => res.json())
       .then(tables => dispatch(uploadTables(tables)))
-    }
-  };
-  export const updateTables = (noweDane) => {
-    return(dispatch) => {
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(noweDane),
-      };
-  
-      fetch(url + '/' + noweDane.id, options)
-        .then(() => dispatch(updateInfo(noweDane)))
-    }
   }
+};
+
+export const updateTables = (noweDane) => {
+  return(dispatch) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(noweDane),
+    };
+
+    fetch(url + '/' + noweDane.id, options)
+      .then(() => dispatch(updateInfo(noweDane)))
+  }
+}
 
 const tablesReducer = (statePart = [], action) => {
   switch (action.type) {
@@ -45,4 +46,5 @@ const tablesReducer = (statePart = [], action) => {
       return statePart;
   };
 };
+
 export default tablesReducer;
